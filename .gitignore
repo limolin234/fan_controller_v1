@@ -1,5 +1,49 @@
-Drivers/CMSIS/
-MDK-ARM/
-.DS_Store
+# ============ 基础推荐方案 - STM32CubeMX/Keil项目 ============
+# 将此文件放置在你的项目根目录（即与 program、pictures 同级）
+
+# ----- 1. Keil uVision 临时文件 -----
+*.uvguix.*
+*.uvoptx
+
+# ----- 2. 编译输出与构建目录 -----
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+[Oo]bj/
+*.axf
+*.o
+*.d
+*.crf
+*.lnp
+*.lst
+*.map
+*.htm
+*.dep
+*.iex
+*.bin
+*.hex
+
+# ----- 3. CubeMX 本地文件 -----
+*.mxproject
+*.launch
+
+# ----- 4. 系统与编辑器临时文件 -----
 Thumbs.db
+.DS_Store
+*~
 *.swp
+
+# ----- 5. 核心 CMSIS 精简规则（关键！）-----
+# 保留芯片相关的核心文件，排除所有庞大的、可重新生成的库、文档和测试套件。
+program/Drivers/CMSIS/DSP/
+program/Drivers/CMSIS/NN/
+program/Drivers/CMSIS/docs/
+program/Drivers/CMSIS/Core_A/
+# 可选：如果你确定不需要RTOS相关模板，也可以排除
+program/Drivers/CMSIS/RTOS/
+program/Drivers/CMSIS/RTOS2/
+
+# ----- 6. MDK-ARM 生成目录（通常可完全重新生成）-----
+# 注意：MDK-ARM/project_name.uvprojx 是核心工程文件，必须保留！
+program/MDK-ARM/DebugConfig/
+program/MDK-ARM/RTE/
