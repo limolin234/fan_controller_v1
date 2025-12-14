@@ -1,0 +1,5 @@
+Drivers/CMSIS/
+MDK-ARM/
+.DS_Store
+Thumbs.db
+*.swp
