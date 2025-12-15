@@ -100,7 +100,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_1,GPIO_PIN_RESET);
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_ADC_Init();
@@ -108,6 +107,7 @@ int main(void)
   MX_TIM2_Init();
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
+    HAL_GPIO_WritePin(GPIOB,GPIO_PIN_1,GPIO_PIN_RESET);
 	HAL_TIM_Encoder_Start(&htim21,TIM_CHANNEL_ALL);
 	OLED_Init();
 	OLED_Clear();
